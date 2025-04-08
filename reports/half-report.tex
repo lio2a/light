@@ -1,0 +1,106 @@
+\documentclass[a4paper,brazilian,12pt]{article}
+
+\usepackage[brazilian]{babel}
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+\title{Elaboração de um software para o desenvolvimento sistemas ópticos dedicado ao ensino da disciplina de Design Óptico no curso de Física}
+\author{Vinicius Henrique Pereira Giroto}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+
+Este relatório parcial descreve o progresso do projeto de desenvolvimento de um software para o design de sistemas ópticos, focado no ensino da disciplina de Design Óptico no curso de Física. O projeto utiliza a linguagem Rust e a biblioteca wgpu (https://github.com/gfx-rs/wgpu) para implementar um traçador de raios acelerado por GPU.
+
+\section{Desenvolvimento Atual}
+
+\subsection{Traçado de Raios na GPU}
+
+Implementamos um método para traçar raios através de uma lista de superfícies, utilizando a GPU para aceleração. O método calcula os pontos de interseção, direções normais e distâncias.
+
+\subsubsection{Estrutura \texttt{Ray}}
+
+A estrutura \texttt{Ray} representa um raio no espaço 3D.
+
+\begin{minted}{rust}
+// Insira aqui a definição da estrutura Ray
+\end{minted}
+
+\subsubsection{Estrutura \texttt{Surface}}
+
+A estrutura \texttt{Surface} representa uma superfície óptica.
+
+\begin{minted}{rust}
+// Insira aqui a definição da estrutura Surface
+\end{minted}
+
+\subsubsection{Estrutura \texttt{Intersection}}
+
+A estrutura \texttt{Intersection} armazena os dados de interseção entre um raio e uma superfície.
+
+\begin{minted}{rust}
+// Insira aqui a definição da estrutura Intersection
+\end{minted}
+
+\subsection{Cálculo de Parâmetros do Sistema}
+
+Desenvolvemos métodos para calcular parâmetros importantes do sistema óptico, como espessura, curvatura, raio e distância focal. O software é projetado para ser extensível, permitindo a adição de novos parâmetros.
+
+\begin{minted}{rust}
+// Insira aqui o código Rust para o cálculo de parâmetros
+\end{minted}
+
+\subsection{Função de Mérito}
+
+Atualmente, estamos trabalhando na implementação de métodos para calcular a função de mérito, que será utilizada no processo de otimização do sistema óptico.
+
+\subsubsection{O que é a Função de Mérito?}
+
+A função de mérito (ou função objetivo) é uma função matemática que quantifica o desempenho de um sistema óptico. No contexto da otimização, o objetivo é minimizar (ou maximizar) a função de mérito, ajustando os parâmetros do sistema.
+
+\subsubsection{Para que serve a Função de Mérito?}
+
+A função de mérito serve para guiar o processo de otimização, permitindo que o software encontre a configuração de parâmetros que resulta no melhor desempenho do sistema óptico.
+
+\subsubsection{Descrição do Desenvolvimento}
+
+[Descreva aqui o progresso no desenvolvimento da função de mérito.]
+
+\section{Exemplo de Traçado de Raios}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{image.svg}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{cccccc}
+        \toprule
+        Surface & Ray & t & Origin & Normal & Direction \\
+        \midrule
+        1 & 1 & 1.5 & (0, 0, 0) & (0, 0, 1) & (0, 0, 1) \\
+        2 & 1 & 2.0 & (0, 0, 1.5) & (0, 0, -1) & (0, 0, 1) \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+\section{Próximos Passos}
+
+* Concluir a implementação da função de mérito.
+* Desenvolver um algoritmo de otimização para o sistema óptico.
+* Criar uma interface gráfica para o software.
+* Realizar testes e validação do software.
+
+\section{Conclusão}
+
+O projeto está progredindo conforme planejado. As funcionalidades implementadas até o momento fornecem uma base sólida para o desenvolvimento de um software completo para o design de sistemas ópticos.
+
+\end{document}

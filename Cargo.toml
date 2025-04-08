@@ -1,0 +1,27 @@
+[package]
+name = "light"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.97"
+bytemuck = "1.21.0"
+derive_builder = "0.20.2"
+encase = { version = "0.10.0", features = ["nalgebra"] }
+nalgebra = { version = "0.33.2", features = ["bytemuck"] }
+svg = "0.18.0"
+tokio = { version = "1.42", features = ["full"] }
+wgpu = "24.0.0"
+
+[profile.release]
+opt-level = 3
+strip = true
+lto = "fat"
+panic = "abort"
+codegen-units = 1
+
+[profile.dev]
+opt-level = 0
+lto = false
+panic = "abort"
+codegen-units = 16
